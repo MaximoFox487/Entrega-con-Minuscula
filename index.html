@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="script.js"></script>
     <title>XXSwap</title>
 </head>
 
@@ -55,7 +55,7 @@
           </div>
       </div>
 
-      <div class="container">
+      <div class="container2">
           <div class="row">
             <div class=".col-auto">
               <button type="button" class="btn btn-primary mr-2">Trade</button>
@@ -65,6 +65,38 @@
             </div>
           </div>
         </div>
+
+        <div class="container2">
+  <h1 class="h1 Swap">Insta Swap</h1>
+
+  <div class="conversion-table">
+    <div class="row">
+      <label for="fromCurrency">From:</label>
+      <select id="fromCurrency" onchange="fetchQuote('from')" required></select>
+      <input type="number" id="fromAmount" placeholder="Enter amount..." oninput="calculateConversion()" required>
+      <label for="toCurrency">To:</label>
+      <select id="toCurrency" onchange="fetchQuote('to')" required></select>
+      <span id="toQuote"></span>
+    </div>
+    <div class="row">
+      <span id="fromQuote"></span>
+      <label for="conversionResult">You will receive:</label>
+      <span id="conversionResult"></span>
+      <span id="toCurrencySymbol"></span>
+    </div>
+  </div>
+
+  <button onclick="convert()">Convert</button>
+
+  <div id="conversion-message"></div>
+  <div id="loading" class="loading"></div>
+</div>
+
+
+        
+
+
+        
         <div class="container mb-5">  
         </div>
       <div>
